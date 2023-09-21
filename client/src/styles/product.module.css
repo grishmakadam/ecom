@@ -3,6 +3,7 @@
   font-family: Arial, Helvetica, sans-serif;
   margin: 0;
   padding: 0;
+  overflow: auto;
 }
 
 .container {
@@ -66,4 +67,29 @@ p {
   display: flex;
   align-items: center;
   column-gap: 10px;
+  cursor: pointer;
+  background-color:  rgb(200, 196, 57);
+  box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.24);
+  padding: 10px 20px;
+  border-radius: 5px;
+}
+
+.cartButton{
+    display: flex;
+   box-shadow:  0px 3px 10px rgba(0, 0, 0, 0.24);
+   border-radius: 5px;
+}
+
+.box{
+    padding: 5px 10px;
+}
+
+.box:nth-child(even){
+    border-left:1px solid #ddd;    
+    border-right: 1px solid #ddd;   
+
+}
+.box:nth-child(odd){
+   cursor: pointer;  
+    background-color: rgba(210, 210, 210, 0.24);
 }

@@ -1,10 +1,12 @@
-import React, { useEffect, useState } from "react";
-import axios from "axios"; 
+import React, { useContext, useEffect, useState } from "react";
+import axios from "axios";
 import classes from "../styles/product.module.css";
+import { useCart } from "../context/cartContext";
+import { useNavigate } from "react-router-dom";
 
 const ProductCatalog = () => {
-  const [products, setProducts] = useState([]);
-  const [cart, setCart] = useState([]);
+    const [products, setProducts] = useState([]);
+    const { dispatch } = useCart()
   const getProducts = async () => {
     try {
       const res = await axios.get("https://dummyjson.com/products");
@@ -19,8 +21,7 @@ const ProductCatalog = () => {
   }, []);
 
   const addToCart = (item) => {
-    setCart((prev) => [...prev, item]);
-    console.log(cart);
+    dispatch({ type: "ADD_TO_CART", payload: item });
   };
   return (
     <div className={classes.products}>
