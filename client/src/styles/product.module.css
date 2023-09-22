@@ -47,6 +47,7 @@ p {
   border: none;
   color: #ffffff;
   border-radius: 20px;
+
 }
 
 .button:hover {
@@ -69,9 +70,14 @@ p {
   column-gap: 10px;
   cursor: pointer;
   background-color:  rgb(200, 196, 57);
-  box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.24);
   padding: 10px 20px;
   border-radius: 5px;
+  margin:0 10px;
+}
+
+.cart:hover{
+    box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.24);
+
 }
 
 .cartButton{

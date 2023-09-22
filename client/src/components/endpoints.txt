@@ -1,0 +1,44 @@
+
+API Endpoints:
+1. User registration:
+	Method:"POST"
+	URL:"http://localhost:8000/users/register
+	Request body:
+		{
+		username:"",
+		email:"",
+        password:""
+		}
+    Description:Api to register user
+    Response:{
+	success:"",
+	user:{}
+			}
+
+2. Login user:
+	Method:"POST"
+	URL:"http://localhost:8000/users/login
+	Request body:
+		{
+		
+		email:"",
+        password:""
+		}
+    Description:Api to login user
+    Response:{
+	success:"",
+	message:{}
+	}
+
+
+
+
+
+	
+
+Application Routes:
+
+1. Register page : "http://localhost:3000/register"
+2. Login page :"http://localhost:3000/login"
+3. Product catalog page :"http://localhost:3000/products"
+4. Display cart items :"http://localhost:3000/cart" 

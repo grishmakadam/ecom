@@ -3,12 +3,11 @@ import { useCart } from "../context/cartContext";
 import classes from "../styles/product.module.css";
 
 const DisplayCart = () => {
-  const { cart,dispatch } = useCart();
- 
-    const handleCart = (type, item) => {
-        console.log(type)
-        dispatch({ type: type, payload: item })
-    }
+  const { cart, dispatch } = useCart();
+
+  const handleCart = (type, item) => {
+    dispatch({ type: type, payload: item });
+  };
   return (
     <div className={classes.products}>
       {cart.items?.map((item) => (
@@ -20,12 +19,23 @@ const DisplayCart = () => {
             <p>{item.description}</p>
           </div>
           <div className={classes.cartButton}>
-            <div className={classes.box} onClick={()=>handleCart("REMOVE_FROM_CART",item)}>-</div>
+            <div
+              className={classes.box}
+              onClick={() => handleCart("REMOVE_FROM_CART", item)}
+            >
+              -
+            </div>
             <div className={classes.box}>{item.quantity}</div>
-                  <div className={classes.box} onClick={() => handleCart("ADD_TO_CART",item)}>+</div>
+            <div
+              className={classes.box}
+              onClick={() => handleCart("ADD_TO_CART", item)}
+            >
+              +
+            </div>
           </div>
         </div>
       ))}
+          
       {cart.items.length == 0 && <p>Cart is empty</p>}
     </div>
   );
